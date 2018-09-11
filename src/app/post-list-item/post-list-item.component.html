@@ -1,0 +1,17 @@
+<li [ngClass]="{'list-group-item': true,
+'list-group-item-success': loveIts > 0,
+'list-group-item-danger': loveIts < 0}">
+  <table border = 0 width="100%">
+    <th>
+       <h2 [ngStyle]="{color:getColor()}"> {{title}}</h2>
+    </th>
+    <th style="text-align:right;">
+  <h4 Style="color:grey;">{{created_at | date: 'M/d/yyyy, h:mm a' | uppercase }}</h4>
+  </th>
+    </table>
+  <h4 [ngStyle]="{color:getColor()}">{{content}}</h4>
+  <button class="btn btn-success" style="margin-right:4px"
+           (click)="onLoveit()">Love it</button>
+  <button class="btn btn-danger"
+          (click)="onDontloveit()">Don't love it</button>
+</li>
